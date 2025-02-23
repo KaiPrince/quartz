@@ -1,6 +1,7 @@
 import path from "path"
 import { FilePath } from "./path"
 import { globby } from "globby"
+import { filterPrivatePages } from "./ignoreFiles"
 
 export function toPosixPath(fp: string): string {
   return fp.split(path.sep).join("/")
@@ -18,5 +19,6 @@ export async function glob(
       gitignore: true,
     })
   ).map(toPosixPath)
-  return fps as FilePath[]
+  const filteredFPs = filterPrivatePages(fps)
+  return filteredFPs as FilePath[]
 }
