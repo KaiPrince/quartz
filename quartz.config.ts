@@ -16,8 +16,8 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: process.env.BASE_URL || "localhost",
+    ignorePatterns: [".obsidian", "**/.*", "**/_*", "**/*.png", "**/*.jpg", "**/*.jpeg"],
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
