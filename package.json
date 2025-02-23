@@ -33,6 +33,16 @@
   "bin": {
     "quartz": "./quartz/bootstrap-cli.mjs"
   },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  },
   "dependencies": {
     "@clack/prompts": "^0.10.0",
     "@floating-ui/dom": "^1.6.13",
